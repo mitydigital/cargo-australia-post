@@ -1,0 +1,49 @@
+{
+    "name": "mitydigital/cargo-australia-post",
+    "autoload": {
+        "psr-4": {
+            "MityDigital\\CargoAustraliaPost\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MityDigital\\CargoAustraliaPost\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "statamic/cms": "^6.0",
+        "duncanmcclean/statamic-cargo": "^1.16"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.8",
+        "laravel/pint": "^1.32",
+        "pestphp/pest": "^4.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "pint": [
+            "./vendor/bin/pint"
+        ],
+        "test": [
+            "php -d memory_limit=-1 -d max_execution_time=0 ./vendor/bin/pest"
+        ]
+    },
+    "extra": {
+        "statamic": {
+            "name": "Cargo Australia Post",
+            "description": "Cargo Australia Post addon"
+        },
+        "laravel": {
+            "providers": [
+                "MityDigital\\CargoAustraliaPost\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
